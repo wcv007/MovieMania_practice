@@ -7,7 +7,14 @@ const MovieList = ({ data }) => {
     <div className="movie-wrapper">
       {data?.map(
         (
-          { poster_path, vote_average, overview, original_title, release_date },
+          {
+            poster_path,
+            vote_average,
+            overview,
+            original_title,
+            release_date,
+            id,
+          },
           index
         ) => (
           <MovieCard
@@ -17,6 +24,7 @@ const MovieList = ({ data }) => {
             overview={overview}
             title={original_title}
             release_date={release_date}
+            id={id}
           />
         )
       )}

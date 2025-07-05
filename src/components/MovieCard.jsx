@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import "./MovieCard.css";
 import Star from "../assets/star.png";
-const MovieCard = ({ path, rating, overview, release_date, title }) => {
+const MovieCard = ({ path, rating, overview, release_date, title, id }) => {
   const [showText, setShowText] = useState(false);
   function longText(str, maxLength) {
     if (str.length > maxLength) {
-      return str.slice(0, 150).trim() + "...";
+      return str.slice(0, maxLength).trim() + "...";
     } else {
       return str;
     }
   }
   return (
-    <div
+    <a
       className="image-wrapper"
       onMouseEnter={() => setShowText(true)}
       onMouseLeave={() => setShowText(false)}
+      href={`https://www.themoviedb.org/movie/${id}`}
+      target="_blank"
     >
       <img
         className="movie-image"
@@ -31,10 +33,10 @@ const MovieCard = ({ path, rating, overview, release_date, title }) => {
               <img className="text-smiley" src={Star}></img>
             </div>
           </div>
-          <div className="description">{longText(overview, 150)}</div>
+          <div className="description">{longText(overview, 105)}</div>
         </div>
       )}
-    </div>
+    </a>
   );
 };
 

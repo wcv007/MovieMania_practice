@@ -16,7 +16,7 @@
 .movie-image:hover {
   transform: scale(1.07);
   z-index: 1;
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .text-overlay {
@@ -54,7 +54,8 @@
 
 .description {
   margin: 12px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   vertical-align: middle;
+  color: wheat;
 }
